@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Hello Primefaces - JSF 2.0</title>
+</h:head>
+<h:body>
+	<h3>Hello Primefaces - JSF 2.0</h3>
+
+	<h:form>
+		<h:inputText value="#{helloBean.name}"></h:inputText>
+		<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
+	</h:form>
+
+	<h:form>
+		<h:panelGrid columns="4" cellpadding="5">
+			<h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+			<p:inputText id="name" value="#{helloBean.name}"></p:inputText>
+			<h:commandButton value="Processar!" update="display"
+				icon="ui-icon-check"></h:commandButton>
+			<h:outputText id="display" value="#{helloBean.name}"></h:outputText>
+		</h:panelGrid>
+	</h:form>
+
+	<br></br>
+
+	<p:themeSwitcher style="width:250px">
+		<f:selectItem itemLabel="Choose Theme" itemValue="" />
+		<f:selectItems value="#{themeBean.all}" />
+	</p:themeSwitcher>
+
+</h:body>
+</html>
